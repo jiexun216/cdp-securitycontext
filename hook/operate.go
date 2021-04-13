@@ -24,7 +24,7 @@ import (
 
 //only the # cml-user//ds-parent-namespace//
 // cdp-securitycontext admission is to add securityContext
-func createSecurityContextPatch(availableAnnotations map[string]string, annotations map[string]string, availableLabels map[string]string, labels map[string]string) ([]byte, error) {
+func createAddSecurityContextPatch(availableAnnotations map[string]string, annotations map[string]string, availableLabels map[string]string, labels map[string]string) ([]byte, error) {
 	var patch []patchOperation
 	// update Annotation to set admissionWebhookAnnotationStatusKey: "mutated"
 	patch = append(patch, updateAnnotation(availableAnnotations, annotations)...)
